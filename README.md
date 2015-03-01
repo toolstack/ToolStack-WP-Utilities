@@ -1,7 +1,7 @@
 # ToolStack WP Utilities
 
-Contributors: GregRoss  
-Plugin URI: http://toolstack.com  
+Contributors: Greg Ross
+URI: http://toolstack.com  
 License: GPLv2  
 
 ## Description ##
