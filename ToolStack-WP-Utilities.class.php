@@ -1,6 +1,14 @@
 <?php
 /*
 	This is the ToolStack.com WordPress Utilities class.
+	
+	Copyright (C) 2015 Greg Ross <greg@toolstack.com>
+	    All rights reserved.
+	    This is free software with ABSOLUTELY NO WARRANTY.
+	
+	You can redistribute it and/or modify it under the terms of the
+	GPL2, GNU General Public License version 2.
+	
 */
 if( !class_exists( 'ToolStack_WP_Utilities_V2_2' ) ) {
 	class ToolStack_WP_Utilities_V2_2
