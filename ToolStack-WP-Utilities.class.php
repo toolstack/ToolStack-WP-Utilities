@@ -10,8 +10,8 @@
 	GPL2, GNU General Public License version 2.
 	
 */
-if( !class_exists( 'ToolStack_WP_Utilities_V2_2' ) ) {
-	class ToolStack_WP_Utilities_V2_2
+if( !class_exists( 'ToolStack_WP_Utilities_V2_3' ) ) {
+	class ToolStack_WP_Utilities_V2_3
 		{
 		private $plugin_slug = '';
 		private $user_id = 0;
@@ -238,7 +238,7 @@ if( !class_exists( 'ToolStack_WP_Utilities_V2_2' ) ) {
 			return array_key_exists( $option, $this->user_options[$this->user_id] );
 			}
 
-		public function print_r( $var, $string = false)
+		public function print_r_html( $var, $string = false)
 			{
 			return $this->var_export_html( $var, $string );
 			}
