@@ -34,7 +34,7 @@ The first thing you need to do is download the library and put it in your plugin
 To do so, add the following lines:
 
 	include_once( 'ToolStack-WP-Utilities.class.php' );
-	$TSU = new ToolStack_WP_Utilities_V2_3( 'my_plugin_slug' );
+	$TSU = new ToolStack_WP_Utilities_V2_4( 'my_plugin_slug' );
 	
 This should be done early in your plugin so you have access to the utilities as soon as possible.
 
