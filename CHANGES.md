@@ -1,3 +1,6 @@
+# 2.5 #
+* Added public plugin_dir and plugin_url variables which define the current plugin's file system path and URL.
+
 # 2.4 #
 
 * Removed translation calls in the settings table code, you should pass in pre-translated strings for output.

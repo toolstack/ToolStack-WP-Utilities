@@ -34,22 +34,24 @@ The first thing you need to do is download the library and put it in your plugin
 To do so, add the following lines:
 
 	include_once( 'ToolStack-WP-Utilities.class.php' );
-	$TSU = new ToolStack_WP_Utilities_V2_4( 'my_plugin_slug' );
+	$TSU = new ToolStack_WP_Utilities_V2_5( 'my_plugin_slug', __FILE__ );
 	
 This should be done early in your plugin so you have access to the utilities as soon as possible.
 
 There are three items to note in the above code:
 
 1. The class name includes the version number.  This is done to avoid version conflicts as others will have included the class in their plugins as well.
-2. 'my_plugin_slug' is used in several places inside the code and should be unique, contain no spaces and not be version dependent.  If it is left blank, the plugin install directory will be used.
-3. $TSU should be replaced with a unique vairable name for your plugin.
+2. 'my_plugin_slug' is used in several places inside the code and should be unique, contain no spaces and not be version dependent.  If it is left blank, the lowercase plugin install directory will be used.
+3. The second parameter should be the plugin's primary file name, this is used to set the plugin_dir and plugin_url variables.  You can leave it blank and it will use the utilities file name, but this may cause unexpected results if the class has already been loaded by another plugin.
+4. $TSU should be replaced with a unique vairable name for your plugin.
 
 ### Class creation ###
 
-During the class creation there are only two things done:
+During the class creation there are three things done:
 
 1. The plugin slug is determined.
-2. The plugin options are loaded from the WordPress options table.
+2. The plugin_dir and plugin_url public variables are set.
+3. The plugin options are loaded from the WordPress options table.
 
 The plugin slug is used as the key name for the options for the plugin.
 
