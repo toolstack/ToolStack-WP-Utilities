@@ -25,13 +25,15 @@ if( !class_exists( 'ToolStack_WP_Utilities_V2_5' ) ) {
 		public $plugin_url;
 
 		// Construction function.
-		public function __construct( $slug = null ) 
+		public function __construct( $slug = null, $file = null ) 
 			{
+			if( $file == null ) { $file = __FILE__; }
+				
 			// Get the plugin's base name, it will be something like 'plugin-slug/ToolStack-WP-Utilities.class.php'
-			$plugin_basename = plugin_basename( __FILE__ );
+			$plugin_basename = plugin_basename( $file );
 			
 			// Get the path of the plugins root directory, we do this my striping off the result we obtained above from the current file name.
-			$plugin_dir_path = substr( __FILE__, 0, - strlen( $plugin_basename ) );
+			$plugin_dir_path = substr( $file, 0, - strlen( $plugin_basename ) );
 			
 			// Split the basename so we can get the directory of the plug.  We use this instead of the slug as it may be case sensitive but the slug is always lower case.
 			// Afterwords, trim the dir name just in case.
