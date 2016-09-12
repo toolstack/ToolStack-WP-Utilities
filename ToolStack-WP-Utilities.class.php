@@ -10,8 +10,8 @@
 	GPL2, GNU General Public License version 2.
 	
 */
-if( !class_exists( 'ToolStack_WP_Utilities_V2_5' ) ) {
-	class ToolStack_WP_Utilities_V2_5
+if( !class_exists( 'ToolStack_WP_Utilities_V2_6' ) ) {
+	class ToolStack_WP_Utilities_V2_6
 		{
 		private $plugin_slug = '';
 		private $user_id = 0;
