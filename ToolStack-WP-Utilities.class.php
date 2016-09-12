@@ -106,20 +106,17 @@ if( !class_exists( 'ToolStack_WP_Utilities_V2_5' ) ) {
 		// The function mimics WordPress's get_option() function but uses the array instead of individual options.
 		public function get_option( $option, $default = null ) 
 			{
+			if( ! isset( $default ) ) 
+				{
+				$default = FALSE;
+				}
 			// If no options array exists, return FALSE.
-			if( !is_array($this->options) ) { return FALSE; }
+			if( ! is_array( $this->options ) ) { return $default; }
 		
 			// if the option isn't set yet, return the $default if it exists, otherwise FALSE.
 			if( !array_key_exists( $option, $this->options ) ) 
 				{
-				if( isset( $default ) ) 
-					{
-					return $default;
-					} 
-				else 
-					{
-					return FALSE;
-					}
+				return $default;
 				}
 			
 			// Return the option.
@@ -174,7 +171,7 @@ if( !class_exists( 'ToolStack_WP_Utilities_V2_5' ) ) {
 		public function get_user_option( $option, $default = FALSE ) 
 			{
 			// If the user id has not been set or no options array exists, return the default.
-			if( $this->user_id == 0 ) {return $default; }
+			if( $this->user_id == 0 ) { return $default; }
 			if( !is_array($this->user_options[$this->user_id]) ) { return $default; }
 			
 			// if the option isn't set yet, return the $default if it exists, otherwise FALSE.
