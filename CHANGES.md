@@ -1,3 +1,9 @@
+# 2.7 #
+* Fix PHP 7.3 warnings.
+
+# 2.6 #
+* Properly handle returning the default when an option hasn't been set.
+
 # 2.5 #
 * Added public plugin_dir and plugin_url variables which define the current plugin's file system path and URL.
 
