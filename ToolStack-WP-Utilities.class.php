@@ -101,6 +101,10 @@ if( !class_exists( 'ToolStack_WP_Utilities_V2_7' ) ) {
 
 			// Not sure why, but get_user_meta() is returning an array or array's unless $single is set to true.
 			$this->user_options[$this->user_id] = get_user_meta( $this->user_id, $this->plugin_slug, true );
+
+			// Let's make sure we have an array, just in case there's something wrong with the user meta data.
+			// If an array doesn't exist, reset it to an empty one.
+			if( ! is_array( $this->user_options[$this->user_id] ) ) { $this->user_options[$this->user_id] = array(); }
 			}
 		
 		// The function mimics WordPress's get_option() function but uses the array instead of individual options.
