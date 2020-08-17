@@ -307,7 +307,7 @@ if( !class_exists( 'ToolStack_WP_Utilities_V2_7' ) ) {
 						break;
 					case 'desc':
 						// Check to make sure we have everything we need.
-						if( !array_key_exists( 'desc', $option ) ) { break; }
+						if( !array_key_exists( 'desc', $option ) ) { continue 2; }
 						
 						$ret .= "					<tr><td></td><td><span class=\"description\">" . $option['desc'] . "</span></td></tr>\r\n";
 						
@@ -315,7 +315,7 @@ if( !class_exists( 'ToolStack_WP_Utilities_V2_7' ) ) {
 					case 'bool':
 						// Check to make sure we have everything we need.
 						if( !array_key_exists( 'setting', $option ) ) { $option['setting'] = 0; }
-						if( !array_key_exists( 'desc', $option ) ) { break; }
+						if( !array_key_exists( 'desc', $option ) ) { continue 2; }
 						
 						if( $option['setting'] == 1 ) { $checked = " CHECKED"; } else { $checked = ""; } 
 						$ret .= "					<tr><td style=\"text-align: right;\">" . $option['desc'] . ":</td><td><input name=\"$name\" value=\"1\" type=\"checkbox\" id=\"$name\"" . $checked. "></td></tr>\r\n";
@@ -324,7 +324,7 @@ if( !class_exists( 'ToolStack_WP_Utilities_V2_7' ) ) {
 					case 'image':
 						// Check to make sure we have everything we need.
 						if( !array_key_exists( 'setting', $option ) ) { $option['setting'] = ''; }
-						if( !array_key_exists( 'desc', $option ) ) { break; }
+						if( !array_key_exists( 'desc', $option ) ) { continue 2; }
 
 						$ret .= "					<tr><td style=\"text-align: right;\">" . $option['desc'] . ":</td><td><input name=\"$name\" type=\"text\" size=\"40\" id=\"$name\" value=\"" . $option['setting'] . "\"></td></tr>\r\n";
 					
@@ -338,8 +338,8 @@ if( !class_exists( 'ToolStack_WP_Utilities_V2_7' ) ) {
 						break;
 					case 'select':
 						// Check to make sure we have everything we need.
-						if( !array_key_exists( 'option_list', $option ) ) { break; }
-						if( !array_key_exists( 'desc', $option ) ) { break; }
+						if( !array_key_exists( 'option_list', $option ) ) { continue 2; }
+						if( !array_key_exists( 'desc', $option ) ) { continue 2; }
 
 						$ret .= "					<tr><td style=\"text-align: right;\">" . $option['desc'] . ":</td><td><select name=\"$name\" id=\"$name\">" . $option['option_list']. "</select></td></tr>\r\n";
 
@@ -347,7 +347,7 @@ if( !class_exists( 'ToolStack_WP_Utilities_V2_7' ) ) {
 					case 'static':
 						// Check to make sure we have everything we need.
 						if( !array_key_exists( 'setting', $option ) ) { $option['setting'] = ''; }
-						if( !array_key_exists( 'desc', $option ) ) { break; }
+						if( !array_key_exists( 'desc', $option ) ) { continue 2; }
 
 						$ret .= "					<tr><td style=\"text-align: right;\">" . $option['desc'] . ":</td><td>" . $option['setting']. "</td></tr>\r\n";
 
@@ -358,7 +358,7 @@ if( !class_exists( 'ToolStack_WP_Utilities_V2_7' ) ) {
 						if( !array_key_exists( 'size', $option ) ) { $option['size'] = ''; }
 						if( !array_key_exists( 'setting', $option ) ) { $option['setting'] = ''; }
 						if( !array_key_exists( 'post', $option ) ) { $option['post'] = ''; }
-						if( !array_key_exists( 'desc', $option ) ) { break; }
+						if( !array_key_exists( 'desc', $option ) ) { continue 2; }
 
 						if( $option['height'] <= 1 ) 
 							{
